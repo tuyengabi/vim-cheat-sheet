@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="" >
+	<head>
+		<meta charset="utf-8">
+		<title>Page Title</title>
+	</head>
+	<body>
+		<h1>CHEAT SHEET VIM</h1>
+		<p>
+		<table width="500px">
+			<colgroup>
+				<col align="center" width="100px">
+				<col align="right" width="400px">
+			</colgroup>
+			<tr>
+				<th>motion</th>
+				<th>description</th>
+			</tr>
+			<tr>
+				<td>h</td>
+				<td>Count characters left  </td>
+			</tr>
+			<tr>
+				<td>l</td>
+				<td>Count characters right  </td>
+			</tr>
+			<tr>
+				<td>^</td>
+				<td>To the first character of the line  </td>
+			</tr>
+			<tr>
+				<td>$</td>
+				<td>To the last character of the line  </td>
+			</tr>
+			<tr>
+				<td>f &#60;char&#62; </td>
+				<td>To the counth character occurrence to the right.</td>
+			</tr>
+			<tr>
+				<td>F &#60;char&#62;</td>
+				<td>To the counth character occurrence to the left  </td>
+			</tr>		
+			<tr>
+				<td>t &#60;char&#62;</td>
+				<td>To 1 character just before the counth character occurrence to the right  </td>
+			</tr>				
+			<tr>
+				<td>T &#60;char&#62;</td>
+				<td>To 1 character just before the counth character occurrence to the left  </td>
+			</tr>	
+			<tr>
+				<td>w</td>
+				<td>Count words forward </td>
+			</tr>
+			<tr>
+				<td>W</td>
+				<td>Count words forward (different definition for what a word is, includes special characters and such)</td>
+			</tr>
+			<tr>
+				<td>e</td>
+				<td>Count forward to the end of word  </td>
+			</tr>
+			<tr>
+				<td>b</td>
+				<td>Count words backward  </td>
+			</tr>
+
+		</table>
+		</p>
+
+		<table>
+			<tr>
+				<td>			trigger</td>  <td> effect </td>
+			</tr>
+			<tr>
+				<td>			c{motion}</td> <td> Change    </td>
+			</tr>
+			<tr>
+				<td>			d{motion}</td> <td> Delete </td>
+			</tr>
+			<tr>
+				<td>			y{motion}</td> <td> Yank into register  </td>
+			</tr>
+			<tr>
+				<td>			g~{motion}</td><td> Toggle case  </td>
+			</tr>
+			<tr>
+				<td>			gu{motion}</td><td> Make lowercase  </td>
+			</tr>
+			<tr>
+				<td>			gU{motion}</td><td> Make uppercase  </td>
+			</tr>
+			<tr>
+				<td>			&gt;{motion}</td> <td> Shift right  </td>
+			</tr>
+			<tr>
+				<td>			&lt;{motion}</td> <td> Shift left  </td>
+			</tr>
+			<tr>
+				<td>			={motion}</td> <td> Auto-indent</td>
+			</tr>
+		</table>
+		<h2> split windows</h2>
+
+		<table>
+			<tr>
+				<td>			command</td>  <td> description</td>
+			</tr>
+			<tr>
+				<td>			&lt;C-w&gt;s or :sp[lit] &lt;file&gt;</td><td> Split file horizontally.</td>
+			</tr>
+			<tr>
+				<td>			&lt;C-w&gt;v or :vsp[lit] &lt;file&gt;</td><td>  Split file vertically  </td>
+			</tr>
+			<tr>
+				<td>			&lt;C-w&gt;w</td> <td> cycle between open windows  </td>
+			</tr>
+			<tr>
+				<td>			&lt;C-w&gt;h</td> <td> focus the window to the left  </td>
+			</tr>
+			<tr>
+				<td>			&lt;C-w&gt;j</td> <td> focus the window below  </td>
+			</tr>
+			<tr>
+				<td>			&lt;C-w&gt;k</td> <td> focus the window above  </td>
+			</tr>
+			<tr>
+				<td>			&lt;C-w&gt;l</td> <td> focus the window to the right  </td>
+			</tr>
+			<tr>
+				<td>			:cl[ose]	&lt;C-w&gt;c</td> <td> close the active window  </td>
+			</tr>
+		</table>
+		<h2> search and replace</h2>
+
+		<table>
+			<tr>
+				<tr>
+					<td>			command</td>  <td>description</td>
+					<tr>
+						<td>			:args \*\*/\*.txt</td> <td> Multi-file Step 1) populate the argument list with the files you want to search</td>
+					</tr>
+					<tr>
+						<td>			:argdo %s/search/replace/gc</td> <td> Mult-file Step 2) replace all occurrences of search with replace but prompt before doing so</td>
+					</tr>
+					<tr>
+						<td>			*</td><td>search for the word under the cursor</td>
+					</tr>
+		</table>
+		<h2> jumps</h2>
+
+		<table>
+			<tr>
+				<td>			command</td>  <td> description</td>
+			</tr>
+			<tr>
+				<td>			:jumps</td> <td> display the jump list</td>
+			</tr>
+			<tr>
+				<td>			&lt;C-o&gt;</td> <td>jump backwards through the jump list</td>
+			</tr>
+			<tr>
+				<td>			&lt;C-i&gt;</td> <td>jump forwards through the jump list</td>
+			</tr>
+			<tr>
+				<td>			:changes</td> <td> display the change list</td>
+			</tr>
+			<tr>
+				<td>			g;</td> <td>jump backwards through the changes list</td>
+			</tr>
+			<tr>
+				<td>			g,</td> <td>jump forwards through the changes list</td>
+			</tr>
+			<tr>
+				<td>			gf</td> <td>jump to the file name under the cursor</td>
+			</tr>
+		</table>
+		<h2> registers</h2>
+
+		<table>
+			<tr>
+				<td>			command</td>  <td> description</td>
+			</tr>
+			<tr>
+				<td>			:registers</td> <td> display the register list</td>
+			</tr>
+			<tr>
+				<td>			&quot;&lt;lower case register&gt;{motion}</td> <td>overwrite or use contents of register</td>
+			</tr>
+			<tr>
+				<td>			&quot;&lt;upper case register&gt;{motion}</td> <td>append or use contents of register</td>
+			</tr>
+			<tr>
+				<td>			0</td><td>populated with last yanked text</td>
+			</tr>
+		</table>
+		<h2> macros</h2>
+
+		<table>
+			<tr>
+				<td>			command</td>  <td> description</td>
+			</tr>
+			<tr>
+				<td>			q{register}</td> <td>start recording and store it in the specified register</td>
+			</tr>
+			<tr>
+				<td>			q</td><td>stop recording</td>
+			</tr>
+			<tr>
+				<td>			{count}@{register}</td><td>execute specified macro count times</td>
+			</tr>
+		</table>
+		<h2> Navigation</h2>
+
+		<table>
+			<tr>
+				<td>			key</td>  <td> move to </td>
+			</tr>
+			<tr>
+				<td>			%</td>	<td>End of construct</td>
+			</tr>
+			<tr>
+				<td>			[[</td>	<td>Backwards to the beginning of the current function.</td>
+			</tr>
+			<tr>
+				<td>			][</td>	<td>Forwards to the beginning of the current function.</td>
+			</tr>
+			<tr>
+				<td>			]}</td>	<td>Beginning of the current block.</td>
+			</tr>
+			<tr>
+				<td>			[{</td>	<td>End of the current block.</td>
+			</tr>
+			<tr>
+				<td>			}[</td>	<td>Beginning of the current comment block.</td>
+			</tr>
+			<tr>
+				<td>			}]</td>	<td>End of the current comment block.</td>
+			</tr>
+			<tr>
+				<td>			gd</td>	<td>First usage of the current variable name. </td>
+			</tr>
+			<tr>
+				<td>			gD</td>	<td>Go to the first global usage of the current variable name.</td>
+			</tr>
+			<tr>
+				<td>			gg</td>	<td>beginning of file</td>
+			</tr>
+			<tr>
+				<td>			G</td>	<td>end of file</td>
+			</tr>
+		</table>
+		#<h2> tcomment <https://github.com/tomtom/tcomment_vim></h2>
+
+		<table>
+			<tr>
+				<td>			command</td>  <td> description</td>
+			</tr>
+			<tr>
+				<td>			gc{motion}</td> <td> Toggle comments (for small comments within one line the &amp;filetype_inline style will be used, if defined)  </td>
+			</tr>
+			<tr>
+				<td>			gcc</td> <td> Toggle comment for the current line  </td>
+			</tr>
+			<tr>
+				<td>			gC{motion}</td> <td> Comment region  </td>
+			</tr>
+			<tr>
+				<td>			gCc</td> <td> Comment the current line  </td>
+			</tr>
+			<tr>
+				<td>			&lt;C- _ &gt;&lt;C- _ &gt;</td> <td> :TComment  </td>
+			</tr>
+			<tr>
+				<td>			&lt;C- _ &gt;b</td> <td> :TCommentBlock  </td>
+			</tr>
+		</table>
+		#<h2> vim-surround <https://github.com/tpope/vim-surround></h2>
+
+		<table>
+			<tr>
+				<td>			command</td>  <td> description</td>
+			</tr>
+			<tr>
+				<td>			cs&lt;current&gt;&lt;new&gt;</td> <td> change old delimeter to new  </td>
+			</tr>
+			<tr>
+				<td>			ds</td> <td> remove delimeters  </td>
+			</tr>
+			<tr>
+				<td>			ysiw&lt;delimiter&gt;</td> <td> wrap current word  </td>
+			</tr>
+			<tr>
+				<td>			S&lt;delimiter&gt;</td> <td>while in visual mode  </td>
+			</tr>
+			<tr>
+				<td>			S=</td> <td> in visual mode, rails ERB tag (requires vim-rails)  </td>
+			</tr>
+			<tr>
+				<td>			S-</td> <td> in visual mode, rails ERB tag (requires vim-rails)  </td>
+			</tr>
+			<tr>
+				<td>			S</td> <td> in visual mode, rails ERB tag (requires vim-rails)  </td>
+			</tr>
+			<tr>
+				<td>			&lt;C-s&gt;=</td> <td> rails ERB tag (requires vim-rails)  </td>
+			</tr>
+			<tr>
+				<td>			&lt;C-s&gt;-</td> <td> rails ERB tag (requires vim-rails)  </td>
+			</tr>
+			<tr>
+				<td>			&lt;C-s&gt;</td> <td> rails ERB tag (requires vim-rails)  </td>
+			</tr>
+		</table>
+		<h2> miscellaneous</h2>
+
+		<table>
+			<tr>
+				<td>			command</td>  <td> description</td>
+			</tr>
+			<tr>
+				<td>			v</td> <td> enable characterwise Visual mode  </td>
+			</tr>
+			<tr>
+				<td>			V</td> <td> enable linewise Visual mode  </td>
+			</tr>
+			<tr>
+				<td>			&lt;C-v&gt;</td><td> enable blockwise Visual mode  </td>
+			</tr>
+			<tr>
+				<td>			gv</td> <td> reselect the last visual selection  </td>
+			</tr>
+			<tr>
+				<td>			"+p</td> <td> paste from system clipboard  </td>
+			</tr>
+			<tr>
+				<td>			:0,$d</td> <td> delete every line in a file</td>
+			</tr>
+			<tr>
+				<td>			&lt;C-a&gt;</td> <td> increment number</td>
+			</tr>
+			<tr>
+				<td>			&lt;C-x&gt;</td> <td> decrement number</td>
+			</tr>
+			<tr>
+				<td>			vit</td> <td> select contents inside of an HTML tag</td>
+			</tr>
+			<tr>
+				<td>			:map</td><td>List all currently define mappings</td>
+			</tr>
+			<tr>
+				<td>			:verbose map</td><td>Display where mapping was defined</td>
+			</tr>
+			<tr>
+				<td>			g/{pattern}/d</td><td>Delete every line matching pattern.</td>
+			</tr>
+			<tr>
+				<td>			v/{pattern}/d</td><td>Delete every line _not_ matching pattern.</td>
+			</tr>
+		</table>
+	</body>
+</html>
